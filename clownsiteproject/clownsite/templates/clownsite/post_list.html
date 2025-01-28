@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clown Posts</title>
+</head>
+<body>
+    <h1>Clown Posts</h1>
+
+    <ul>
+        {% for post in posts %}
+            <li>
+                <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+                <p><strong>Author: Fermin</strong> {{ post.author }}</p>
+                <p><strong>Created at: visual code</strong> {{ post.created_at }}</p>
+                <p><strong>Summary:still trying</strong> {{ post.body|truncatewords:20 }}</p> <!-- Truncate body to 20 words -->
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
